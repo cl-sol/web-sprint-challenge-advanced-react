@@ -19,11 +19,12 @@ export default class PlantList extends Component {
       .get ("http://localhost:3333/plants")
       .then (res => {
         console.log(res.data)
+        this.setState({
+          plants: res.data.plantsData
+        })
       })
       .catch(err => console.log(err))
   };
-
-
 
   render() {
     return (
